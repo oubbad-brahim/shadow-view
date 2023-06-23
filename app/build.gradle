@@ -5,18 +5,22 @@ plugins {
 
 android {
     namespace 'com.example.shadowview'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.shadowview"
         minSdk 19
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
-
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    viewBinding {
+        enabled true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -38,4 +42,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
 }
