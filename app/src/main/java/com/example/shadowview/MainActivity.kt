@@ -10,6 +10,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.createBitmap
 import com.example.shadowview.databinding.ActivityMainBinding
+import com.google.android.material.shape.CornerFamily
+import com.google.android.material.shape.MaterialShapeDrawable
+import com.google.android.material.shape.ShapeAppearanceModel
+import com.google.android.material.shape.TriangleEdgeTreatment
 import kotlin.math.abs
 
 
@@ -32,12 +36,26 @@ class MainActivity : AppCompatActivity() {
             Color.RED,
             floatArrayOf(12f, 12f, 12f, 12f, 12f, 12f, 12f, 12f)
         )
-
 //        binding.imageView.setImageBitmap(shadowBitmap)
+
+        val shapePathModel = ShapeAppearanceModel.builder()
+            .setAllCorners(CornerFamily.ROUNDED, 40.toFloat())
+            .setBottomLeftCorner(CornerFamily.CUT, 40.toFloat())
+            .setAllEdges(TriangleEdgeTreatment(20.toFloat(), false))
+            .setTopEdge(TriangleEdgeTreatment(20.toFloat(), false))
+            .setBottomEdge(TriangleEdgeTreatment(20.toFloat(), true))
+            .build()
+
+        val backgroundDrawable = MaterialShapeDrawable().apply {
+            elevation = 240f
+            setShadowColor(Color.GREEN)
+            shadowCompatibilityMode = MaterialShapeDrawable.SHADOW_COMPAT_MODE_DEFAULT
+        }
+
+//        binding.imageView.setImageDrawable(backgroundDrawable)
 
 
     }
-
 
     fun shadowBitmap(
         shadowWidth: Int, shadowHeight: Int, shadowRadius: Float,

@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <declare-styleable name="DropShadowView">
+        <attr name="dsv_radius" format="integer" />
+        <attr name="dsv_corner" format="dimension" />
+        <attr name="dsv_shift_x" format="dimension" />
+        <attr name="dsv_shift_y" format="dimension" />
+        <attr name="dsv_color" format="color" />
+        <attr name="dsv_scale" format="float" />
+        <attr name="dsv_blur_scale" format="float" />
+        <attr name="dsv_spread" format="integer" />
+    </declare-styleable>
+
+
     <declare-styleable name="ShadowLayout">
         <attr name="shadowCornerRadius" format="dimension" />
         <attr name="shadowColor" format="color" />
